@@ -1,0 +1,27 @@
+{
+  "name": "weather-application",
+  "version": "1.0.0",
+  "description": "This project uses the Dark Sky API to give the weather information. It also changes the unit as per the location.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ContriverH/Weather-application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ContriverH/Weather-application/issues"
+  },
+  "homepage": "https://github.com/ContriverH/Weather-application#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.13"
+  }
+}
