@@ -116,6 +116,7 @@ body {
 }
 
 .pac-item {
+  /* this is to set the css of the serach query. The documentaion is provided at : https://developers.google.com/maps/documentation/javascript/places */
   font-size: 2rem;
   padding: 10px 10px;
 }
