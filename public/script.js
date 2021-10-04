@@ -1,3 +1,5 @@
+const { json } = require("express")
+
 const serachElement = document.querySelector('[data-city-search]')
 const searchBox = new google.maps.places.SearchBox(serachElement)
 searchBox.addListener('places_changed', () => {
@@ -18,7 +20,26 @@ searchBox.addListener('places_changed', () => {
             // longitude: "82.683703"
         })
     }).then(res => res.json()).then(data => {
-        console.log(data);
-        // setWeatherData(data, place.formatted_address)
+        // console.log(data);
+        setWeatherData(data, place.formatted_address)
     })
 })
+
+
+// fetch('/weather').then(data => console.log(data))
+
+const statusElement = document.querySelector('[data-status]')
+const locationElement = document.querySelector('[data-location]')
+const windElement = document.querySelector('[data-wind]')
+const temperatureElement = document.querySelector('[data-temperature]')
+const precipitationElement = document.querySelector('[data-precipitation]')
+const imgElement = document.querySelector('[data-image]');
+
+function setWeatherData(data, place) {
+    locationElement.textContent = place
+    statusElement.textContent = data.weather[0].description
+    windElement.textContent = data.wind_speed
+    temperatureElement.textContent = data.temp
+    precipitationElement.textContent = data.clouds
+    imgElement.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+}
